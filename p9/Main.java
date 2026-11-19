@@ -12,17 +12,17 @@ public class Main {
 //        Persegi p = new Persegi();
 //        p.hitungLuas(); 
 
-        //konsep polymorp
+        //konsep polymorp -> overriding
         BangunDatar bd;
         
-        bd = new BangunDatar();
-        bd.hitungLuas();
-        
-        bd = new Persegi();
-        bd.hitungLuas();
-        
-        bd = new Lingkaran();
-        bd.hitungLuas();
+//        bd = new BangunDatar();
+//        bd.hitungLuas();
+//        
+//        bd = new Persegi();
+//        bd.hitungLuas();
+//        
+//        bd = new Lingkaran();
+//        bd.hitungLuas();
     }
 }
 
@@ -32,34 +32,53 @@ public class Main {
 //    }
 //}
 
-//abstract method
-//jika suatu kelas abstrak memiliki method, maka subclass yang extends pada class abstrak wajib memiliki method yang sama dengan supclass nya (override method)
-abstract class BangunDatar{
-    abstract void hitungLuas();
+//interfase -> abstract dengan aturan yang lebih ketat
+interface BangunDatar{
+    void hitungLuas();
+    void hitungKeliling();
 }
 
-class Segtiga extends BangunDatar{
-
+class Segitiga implements BangunDatar{
     @Override
-    void hitungLuas() {
+    public void hitungLuas(){
         
     }
-    
-}
-
-class Persegi extends BangunDatar{
     @Override
-    void hitungLuas(){
-        int sisi = 5;
-        int luas = sisi * sisi;
-        System.out.println("Luas Persegi : " + luas);
+    public void hitungKeliling(){
+        
     }
 }
+//abstract method -> jika kita mau subclass yang dimiliki diwajibkan memiliki method yang kita miliki
+//jika suatu kelas abstrak memiliki method, maka subclass yang extends pada class abstrak wajib memiliki method yang sama dengan supclass nya (override method)
+//abstract class BangunDatar{
+//    abstract void hitungLuas();
+//    void hitungKeliling(){ 
+//        
+//    }
+//}
 
-class Lingkaran extends BangunDatar{
-    void hitungLuas(){
-        double jari = 7;
-        double luas = 3.14 * jari * jari;
-        System.out.println("Luas Lingakaran : " + luas);
-    }
-}
+//class Segitiga extends BangunDatar{
+//
+//    @Override
+//    public void hitungLuas() {
+//        
+//    }
+//    
+//}
+
+//class Persegi extends BangunDatar{
+//    @Override
+//    void hitungLuas(){
+//        int sisi = 5;
+//        int luas = sisi * sisi;
+//        System.out.println("Luas Persegi : " + luas);
+//    }
+//}
+//
+//class Lingkaran extends BangunDatar{
+//    void hitungLuas(){
+//        double jari = 7;
+//        double luas = 3.14 * jari * jari;
+//        System.out.println("Luas Lingakaran : " + luas);
+//    }
+//}
